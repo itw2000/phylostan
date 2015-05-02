@@ -3,12 +3,10 @@
 \alias{phylostan}
 \docType{package}
 \title{
-What the package does (short line)
-~~ package title ~~
+Using stan to inference phylogenies on smalld datasets. (short line)
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+Coms4761 project attempt to implement a newer algorithm to to use Bayesian inference to construct phylogentic trees. The package relies on aligned .nex files and outputs statistics and diagnostics for determining the best tree. 
 }
 \details{
 \tabular{ll}{
@@ -21,10 +19,7 @@ License: \tab What license is it under?\cr
 ~~ An overview of how to use the package, including the most important functions ~~
 }
 \author{
-Who wrote it
-
-Maintainer: Who to complain to <yourfault@somewhere.net>
-~~ The author and/or maintainer of the package ~~
+Ian Walshe
 }
 \references{
 ~~ Literature or other references for background information ~~
