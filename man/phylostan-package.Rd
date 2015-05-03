@@ -3,7 +3,7 @@
 \alias{phylostan}
 \docType{package}
 \title{
-Using stan to inference phylogenies on smalld datasets. (short line)
+Using stan to inference phylogenies on small datasets.
 }
 \description{
 Coms4761 project attempt to implement a newer algorithm to to use Bayesian inference to construct phylogentic trees. The package relies on aligned .nex files and outputs statistics and diagnostics for determining the best tree. 
@@ -12,11 +12,13 @@ Coms4761 project attempt to implement a newer algorithm to to use Bayesian infer
 \tabular{ll}{
 Package: \tab phylostan\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2015-04-28\cr
-License: \tab What license is it under?\cr
+Version: \tab 0.1.0\cr
+Date: \tab 2015-05-11\cr
 }
-~~ An overview of how to use the package, including the most important functions ~~
+Phylostan accepts data from Nexus files and then allows the user to specify the evolutionary model parameters:
+Type: DNA, Codon, Amino Acid
+Substitution Model: GTR, Juke-Cantor
+
 }
 \author{
 Ian Walshe
@@ -26,10 +28,6 @@ Ian Walshe
 }
 ~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
 \keyword{ package }
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
 \examples{
 ~~ simple examples of the most important functions ~~
 }

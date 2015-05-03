@@ -10,11 +10,21 @@ load.nex <- function(align){
   return(aligned)
 }
 
-#' Set the evolutionary model parameters
-evo.model <- function(type,sub,rate){
+#' Set the evolutionary model parameters and pass out a list of 3 lists
+#' @return List of 3 lists with prior distributions parameters
+evo.model <- function(type,sub){
+  
 }
 
-#' Set the parameters for the HMC simulation
-bayes.model <- function(iter, chains){
+#' Run Bayesian Inference
+#' @param aligned Imported Nexus file matrix
+#' @param evo.par Output of the evo.model
+#' @param N number of taxa
+#' @param K the length of the sequences
+#' @return Shiny stan output of the posterior distributions for the different parameters
+#' @export
+phylo.run <- function(aligned, evo.par, N, K){
+  fit <- rstan("jukes-cantor.stan", data=list(N=N, K=K, alpha=evo.par[1], beta=evo.par[2]))
+  launch_shinystan(my_stanfit)
 }
 

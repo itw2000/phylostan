@@ -7,12 +7,9 @@ data{
 	real lambda;
 }
 paramaters{
+	t ~ uniform(0,1); \\Tree
 	theta ~ dirichlet(alpha); \\Substitution prior
-	freq ~ dirichlet(beta); \\State freq prior
-	branch ~ exponential(lambda);
-	topology ~ uniform(0,1)
-	shape ~ uniform(0,1)
-	
+	branch ~ exponential(lambda); \\Branch length	
 }
 model{
 	for(n in 1:N){
