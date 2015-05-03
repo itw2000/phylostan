@@ -24,6 +24,8 @@ Substitution Model: GTR, Juke-Cantor
 Ian Walshe
 }
 \references{
+Hayasaka, K., T. Gojobori, and S. Horai. (1988) Molecular phylogeny and evolution of primate mitochondrial DNA. Mol. Biol. Evol. 5:626-644.
+
 Huelsenbeck, J.P and Ronquist, F (2003) MrBayes 3: Bayesian phylogenetic inference under mixed models. Bioinformatics,
 doi:10.1093/bioinformatics/btn180.
 
