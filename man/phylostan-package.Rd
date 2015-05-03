@@ -24,10 +24,16 @@ Substitution Model: GTR, Juke-Cantor
 Ian Walshe
 }
 \references{
-~~ Literature or other references for background information ~~
+Huelsenbeck, J.P and Ronquist, F (2003) MrBayes 3: Bayesian phylogenetic inference under mixed models. Bioinformatics,
+doi:10.1093/bioinformatics/btn180.
+
+Huelsenbeck, J.P and Ronquist, F (2001) MRBAYES: Bayesian phylogenetic trees. Bioinformatics, vol. 17, 754-755.
+
+Huelsenbeck, J.P, Rannala, B and Masly J.P. An Introduction to Bayesian Inference of Phylogeny. Science. 
 }
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
 \keyword{ package }
 \examples{
-~~ simple examples of the most important functions ~~
+aligned <- load.nex("primates.nex")
+params <- evo.model("dna","jc")
+phylo.run <- (aligned, params)
 }

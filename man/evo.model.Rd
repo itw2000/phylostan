@@ -12,7 +12,7 @@ evo.model(type, sub)
 \item{sub}{String gtr, jc are the two implmentations right now}
 }
 \value{
-List of 3 lists with prior distributions parameters
+List of parameters to be incorporated into model priors
 }
 \description{
 Set the evolutionary model parameters and pass out a list of 3 lists

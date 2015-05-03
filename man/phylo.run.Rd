@@ -4,19 +4,15 @@
 \alias{phylo.run}
 \title{Run Bayesian Inference}
 \usage{
-phylo.run(aligned, evo.par, N, K)
+phylo.run(aligned, evo.par)
 }
 \arguments{
 \item{aligned}{Imported Nexus file matrix}
 
 \item{evo.par}{Output of the evo.model}
-
-\item{N}{number of taxa}
-
-\item{K}{the length of the sequences}
 }
 \value{
-Shiny stan output of the posterior distributions for the different parameters
+Shiny stan and stan output of the posterior distributions for the different parameters
 }
 \description{
 Run Bayesian Inference

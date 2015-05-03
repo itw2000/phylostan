@@ -14,7 +14,7 @@ load.nex <- function(align){
 #' Set the evolutionary model parameters and pass out a list of 3 lists
 #' @param type String codon, amino, dna
 #' @param sub String gtr, jc are the two implmentations right now
-#' @return List of 3 lists with prior distributions parameters
+#' @return List of parameters to be incorporated into model priors
 #' @examples data <- evo.model("dna","jc")
 #' @export
 evo.model <- function(type,sub){
@@ -41,16 +41,16 @@ evo.model <- function(type,sub){
 #' Run Bayesian Inference
 #' @param aligned Imported Nexus file matrix
 #' @param evo.par Output of the evo.model
-#' @param N number of taxa
-#' @param K the length of the sequences
 #' @return Shiny stan and stan output of the posterior distributions for the different parameters
 #' @export
-phylo.run <- function(aligned, evo.par, N, K){
+phylo.run <- function(aligned, evo.par){
   library(rstan)
   library(shinyStan)
   N <- nrow(aligned)
   K <- ncol(aligned)
-  fit <- rstan("jukes-cantor.stan", data=list(N=N, K=K, alpha=evo.par[1], beta=evo.par[2:length(evo.par)]),iter=1000,nchains=4)
+  aligned <- as.numeric(aligned)
+  #This is the command to run HMC algorithm, lambda refers to the prior put on branch length
+  fit <- stan("juke_cantor.stan", data=list(N=N, K=K, alpha=evo.par[1], beta=evo.par[2:length(evo.par)], lambda=10),  iter=1000, chains=4)
   launch_shinystan(my_stanfit)
 }
 
