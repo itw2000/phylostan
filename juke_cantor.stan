@@ -2,25 +2,26 @@ data{
 	int N; //Number of taxa
 	int K; //Number of sites
 	matrix[N,K] nex; //matrix of aligned sequences
-	vector[4] alpha; //stationary frequencies
+	simplex[4] alpha;
 	real lambda; //branch length prior parameter
 }
 
-paramaters{
-	real t; //Tree
-	vector theta; //Substitution prior
-	vector[N] branch; //Branch length
+parameters{
+	real tree; //Tree probability
+	simplex[4] theta; //Substitution freq
+	matrix[N,K] branch; //Branch length
 }
 model{
 	matrix[N,K] node;
-	//Prior distributions
-	branch ~ exponential(lambda); 
+
+//Prior distributions
 	theta ~ dirichlet(alpha);
-	t ~ beta(1,1);
+	tree ~ beta(1,1);
 
 	for(k in 1:K){
 	      for(n in 1:N){
-	      	node[N,K] <- theta * nex[n,k]
+	      	branch[n,k] ~ exponential(lambda); //Branch prior
+	      	node[n,k] <- branch[n,k] * nex[n,k];
 		}
 	 }
 

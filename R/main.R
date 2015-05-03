@@ -46,11 +46,12 @@ evo.model <- function(type,sub){
 phylo.run <- function(aligned, evo.par){
   library(rstan)
   library(shinyStan)
+  aligned <- as.data.frame(aligned)
   N <- nrow(aligned)
   K <- ncol(aligned)
-  aligned <- as.numeric(aligned)
   #This is the command to run HMC algorithm, lambda refers to the prior put on branch length
-  fit <- stan("juke_cantor.stan", data=list(N=N, K=K, alpha=evo.par[1], beta=evo.par[2:length(evo.par)], lambda=10),  iter=1000, chains=4)
-  launch_shinystan(my_stanfit)
+  fit <- stan("juke_cantor.stan", data=list(N=N, K=K, nex=aligned, alpha=evo.par[2:length(evo.par)], lambda=1),  iter=1000, chains=4)
+  #Shiny stan graphical interface to explore posterior distributions
+  #launch_shinystan(fit)
 }
 
