@@ -4,12 +4,20 @@
 \alias{evo.model}
 \title{Set the evolutionary model parameters and pass out a list of 3 lists}
 \usage{
-evo.model(type, sub, rate)
+evo.model(type, sub)
+}
+\arguments{
+\item{type}{String codon, amino, dna}
+
+\item{sub}{String gtr, jc are the two implmentations right now}
 }
 \value{
 List of 3 lists with prior distributions parameters
 }
 \description{
 Set the evolutionary model parameters and pass out a list of 3 lists
+}
+\examples{
+data <- evo.model("dna","jc")
 }
 

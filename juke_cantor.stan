@@ -12,9 +12,9 @@ paramaters{
 	branch ~ exponential(lambda); \\Branch length	
 }
 model{
-	for(n in 1:N){
-     	       for(k in 1:K){
-	       	     
+	for(k in 1:K){
+     	       for(n in 1:N){
+	       	     nex[n,k] <- 
 
 	       }
 	       }
